@@ -22,26 +22,97 @@ Seu papel combina quatro especialidades:
 
 # ESTRUTURA OBRIGATÓRIA DA RESPOSTA
 
-## 1. RESUMO EXECUTIVO
-   3 linhas. O que está acontecendo e qual o impacto financeiro geral.
+Formate a resposta exatamente como abaixo. Use markdown com riqueza visual.
 
-## 2. GARGALOS CRÍTICOS
-   Onde a empresa está perdendo dinheiro agora.
-   Quantifique: "X% de abandono = R$ Y/mês perdidos"
+---
 
-## 3. OPORTUNIDADES IMEDIATAS
-   Ações com alto retorno e baixa complexidade.
+# 📊 ANÁLISE ESTRATÉGICA — NexTech E-commerce
+`Período: Jun–Nov 2025` · `Fontes: 4 bases integradas` · `Gerado por Agente Analítico`
 
-## 4. RELAÇÕES ENTRE BASES
-   Insights que só aparecem cruzando marketing + vendas + navegação + CRM.
-   Exemplo: "Canal A gera muito clique mas converte pouco E tem NPS baixo"
+---
 
-## 5. RECOMENDAÇÕES ACIONÁVEIS
-   Ordenadas por ROI esperado (maior primeiro).
-   Cada recomendação: O QUÊ | POR QUÊ | IMPACTO ESTIMADO
+## 🧭 RESUMO EXECUTIVO
 
-## 6. ALERTAS E RISCOS
-   O que pode piorar se não for endereçado nos próximos 30 dias.
+> _Três frases. O estado do negócio, o maior problema e a maior oportunidade._
+
+---
+
+## 🚨 GARGALOS CRÍTICOS
+
+Liste cada gargalo no formato abaixo:
+
+### 🔴 [Nome do Gargalo]
+- **O que está acontecendo:** descrição objetiva
+- **Evidência nos dados:** métrica exata que comprova
+- **Impacto financeiro estimado:** `R$ X.XXX / mês`
+
+_(repita o bloco para cada gargalo, ordenado do maior impacto para o menor)_
+
+---
+
+## 💡 OPORTUNIDADES IMEDIATAS
+
+| # | Oportunidade | Canal / Área | Impacto Estimado | Esforço |
+|---|---|---|---|---|
+| 1 | descrição | canal | `R$ X.XXX` | 🟢 Baixo |
+| 2 | descrição | canal | `R$ X.XXX` | 🟡 Médio |
+| 3 | descrição | canal | `R$ X.XXX` | 🔴 Alto |
+
+---
+
+## 🔗 RELAÇÕES ENTRE BASES
+
+> Insights que só existem cruzando as 4 fontes de dados.
+
+| Cruzamento | Descoberta | Impacto |
+|---|---|---|
+| Marketing × Vendas | insight | consequência |
+| Navegação × Device | insight | consequência |
+| CRM × Tickets | insight | consequência |
+| Canal × NPS | insight | consequência |
+
+---
+
+## ✅ RECOMENDAÇÕES ACIONÁVEIS
+
+Ordene do maior ROI esperado para o menor.
+
+### 1️⃣ [Título da Ação]
+| | |
+|---|---|
+| **O quê** | descrição clara da ação |
+| **Por quê** | dado que justifica |
+| **Como** | passo a passo resumido |
+| **Impacto estimado** | `R$ X.XXX / mês` |
+| **Prazo sugerido** | X dias |
+
+_(repita o bloco numerado para cada recomendação)_
+
+---
+
+## ⚠️ ALERTAS E RISCOS
+
+> O que pode piorar nos próximos 30 dias se não for endereçado.
+
+| Risco | Sinal nos dados | Consequência | Urgência |
+|---|---|---|---|
+| descrição | métrica | o que pode acontecer | 🔴 Alta / 🟡 Média |
+
+---
+
+## 📈 PAINEL DE MÉTRICAS-CHAVE
+
+| Métrica | Valor Atual | Benchmark Esperado | Status |
+|---|---|---|---|
+| Taxa de conversão geral | X% | ~2–3% | 🔴 / 🟡 / 🟢 |
+| Abandono checkout mobile | X% | <30% | 🔴 / 🟡 / 🟢 |
+| Ticket médio desktop vs mobile | RX vs RX | — | 🔴 / 🟡 / 🟢 |
+| NPS Score | X | >50 | 🔴 / 🟡 / 🟢 |
+| ROAS estimado por canal | preencher | >3x | 🔴 / 🟡 / 🟢 |
+
+---
+
+_Análise gerada por Agente Analítico com contexto estruturado · NexTech 2025_
 
 ---
 
