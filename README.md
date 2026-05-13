@@ -1,6 +1,8 @@
-# AI Data Strategy — Ai FESTIVAL STARTSE
+# AI Data Strategy — AI Festival StartSe
 
-Demonstração prática de como contexto, estrutura e engenharia de prompt transformam IA genérica em análise estratégica.
+Demonstração prática de como contexto, estrutura e engenharia de prompt transformam IA genérica em análise estratégica de e-commerce.
+
+Apresentação: [slides.google.com](https://docs.google.com/presentation/d/1Kn0lFPRHYG4tOna-NnYgeGXeierAm51U/edit?usp=sharing&ouid=116484345118893479565&rtpof=true&sd=true)
 
 ---
 
@@ -11,7 +13,7 @@ Demonstração prática de como contexto, estrutura e engenharia de prompt trans
 
 ---
 
-## Subindo o projeto
+## Configuração
 
 **1. Clone o repositório**
 
@@ -39,28 +41,23 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Abra o `.env` e substitua `sua_chave_aqui` pela sua chave do [Groq](https://console.groq.com).
+Abra o `.env` e substitua pelo valor real da sua chave do [Groq](https://console.groq.com).
 
-**5. Gere as bases de dados**
+---
 
-```bash
-python gerar_dados.py
-```
+## Dados disponíveis
 
-**6. Abra o dashboard**
+As bases já estão geradas na pasta `data/` e simulam um e-commerce real (NexTech — Eletrônicos e Games, junho–novembro 2025):
 
-```bash
-streamlit run app.py
-```
-
-As bases serão criadas na pasta `data/`:
-
-| Arquivo | Descrição |
+| Arquivo | Conteúdo |
 |---|---|
 | `marketing.csv` | 4.300 campanhas — Google Ads, Instagram, TikTok |
 | `vendas.xlsx` | 3.000 pedidos com device, canal e receita |
 | `navegacao.json` | 10.000 eventos de sessão (funil completo) |
 | `crm.sqlite` | 2.000 clientes, tickets de suporte e NPS |
+| `marketing_dezembro.csv` | Campanhas de dezembro para análise comparativa |
+
+Os dados contêm inconsistências intencionais (formatos de data variados, categorias duplicadas, nomes de plataforma divergentes) para simular cenários reais.
 
 ---
 
@@ -68,32 +65,30 @@ As bases serão criadas na pasta `data/`:
 
 ```
 ai-data-strategy/
-├── gerar_dados.py        # gerador de todas as bases fictícias
-├── app.py                # dashboard Streamlit — carrega dados, chama Groq e exibe relatório
-├── requirements.txt      # dependências Python
-├── .env                  # chave da API (não versionado)
-├── .env.example          # modelo do .env
 ├── prompts/
-│   ├── prompt_ruim.txt   # prompt genérico (sem contexto)
-│   └── prompt_bom.txt    # prompt estruturado (agente analítico)
-└── data/
-    ├── marketing.csv
-    ├── vendas.xlsx
-    ├── navegacao.json
-    ├── crm.sqlite
-    └── marketing_dezembro.csv
+│   ├── prompt_ruim.txt       # prompt genérico — sem contexto de negócio
+│   └── prompt_bom.txt        # prompt estruturado — agente analítico com contrato JSON
+├── data/
+│   ├── marketing.csv
+│   ├── marketing_dezembro.csv
+│   ├── vendas.xlsx
+│   ├── navegacao.json
+│   └── crm.sqlite
+├── requirements.txt
+├── .env.example
+└── slide.md                  # link para os slides da apresentação
 ```
 
 ---
 
 ## Sobre a demonstração
 
-O projeto mostra 3 níveis de uso de IA sobre os mesmos dados:
+O projeto ilustra 3 níveis de uso de IA sobre os mesmos dados:
 
 | Nível | Abordagem | Resultado |
 |---|---|---|
-| IA Genérica | Prompt sem contexto | Insights superficiais |
-| Engenharia de Prompt | Prompt estruturado | Insights melhores |
-| Agente Analítico | Contexto + cruzamento de bases | Insights estratégicos e acionáveis |
+| IA Genérica | `prompt_ruim.txt` — sem contexto | Insights superficiais e genéricos |
+| Engenharia de Prompt | `prompt_bom.txt` — estruturado | Insights melhores, mais focados |
+| Agente Analítico | Contexto completo + cruzamento de bases | Insights estratégicos e acionáveis em JSON |
 
-Os dados possuem inconsistências intencionais (datas em formatos diferentes, categorias duplicadas, nomes de plataforma variados) para simular cenários reais de negócio.
+O `prompt_bom.txt` define um agente com quatro papéis combinados (Cientista de Dados, Consultor Executivo, Analista de BI e Especialista em E-commerce) e retorna um JSON estruturado com: resumo executivo, gargalos, oportunidades, relações entre bases, recomendações priorizadas e alertas de risco.
