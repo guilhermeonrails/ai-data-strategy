@@ -1,4 +1,4 @@
-# AI Data Strategy — NexTech E-commerce
+# AI Data Strategy — Ai FESTIVAL STARTSE
 
 Demonstração prática de como contexto, estrutura e engenharia de prompt transformam IA genérica em análise estratégica.
 
