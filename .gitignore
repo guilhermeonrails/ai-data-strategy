@@ -1,0 +1,20 @@
+# ambiente virtual
+.venv/
+
+# dados gerados
+data/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# variáveis de ambiente
+.env
+.env.*
+
+# Docker volumes
+volumes/
+
+# macOS
+.DS_Store
