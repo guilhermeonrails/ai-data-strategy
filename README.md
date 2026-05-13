@@ -47,6 +47,12 @@ Abra o `.env` e substitua `sua_chave_aqui` pela sua chave do [Groq](https://cons
 python gerar_dados.py
 ```
 
+**6. Rode a análise estratégica**
+
+```bash
+python analise.py
+```
+
 As bases serão criadas na pasta `data/`:
 
 | Arquivo | Descrição |
@@ -63,7 +69,10 @@ As bases serão criadas na pasta `data/`:
 ```
 ai-data-strategy/
 ├── gerar_dados.py        # gerador de todas as bases fictícias
+├── analise.py            # agente analítico — lê dados e envia ao Groq
 ├── requirements.txt      # dependências Python
+├── .env                  # chave da API (não versionado)
+├── .env.example          # modelo do .env
 ├── prompts/
 │   ├── prompt_ruim.txt   # prompt genérico (sem contexto)
 │   └── prompt_bom.txt    # prompt estruturado (agente analítico)
