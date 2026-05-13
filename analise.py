@@ -240,7 +240,13 @@ def rodar_analise():
         ],
     )
 
-    print(response.choices[0].message.content)
+    codigo = response.choices[0].message.content
+
+    with open("dashboard.py", "w", encoding="utf-8") as f:
+        f.write(codigo)
+
+    print("dashboard.py gerado. Para visualizar:\n")
+    print("  streamlit run dashboard.py")
 
 
 if __name__ == "__main__":

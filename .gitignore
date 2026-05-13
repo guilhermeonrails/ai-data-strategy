@@ -2,6 +2,9 @@
 .venv/
 
 
+# gerado pelo agente
+dashboard.py
+
 # Python
 __pycache__/
 *.pyc

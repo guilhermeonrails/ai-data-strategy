@@ -22,97 +22,71 @@ Seu papel combina quatro especialidades:
 
 # ESTRUTURA OBRIGATÓRIA DA RESPOSTA
 
-Formate a resposta exatamente como abaixo. Use markdown com riqueza visual.
+Gere APENAS código Python válido e completo — sem explicações, sem markdown, sem blocos de código.
+O código deve criar uma aplicação Streamlit com visualizações Plotly que apresente a análise estratégica.
 
----
+O código deve seguir esta estrutura:
 
-# 📊 ANÁLISE ESTRATÉGICA — NexTech E-commerce
-`Período: Jun–Nov 2025` · `Fontes: 4 bases integradas` · `Gerado por Agente Analítico`
+import streamlit as st
+import plotly.express as px
+import plotly.graph_objects as go
+import pandas as pd
 
----
+st.set_page_config(page_title="NexTech — Análise Estratégica", layout="wide")
 
-## 🧭 RESUMO EXECUTIVO
+# ── Cabeçalho ────────────────────────────────────────────────
+st.title("📊 Análise Estratégica — NexTech E-commerce")
+st.caption("Período: Jun–Nov 2025 · Fontes: 4 bases integradas · Agente Analítico")
 
-> _Três frases. O estado do negócio, o maior problema e a maior oportunidade._
+# ── 1. Resumo Executivo ───────────────────────────────────────
+st.header("🧭 Resumo Executivo")
+st.info("...três frases com o estado do negócio, maior problema e maior oportunidade...")
 
----
+# ── 2. Métricas-chave (st.metric em colunas) ─────────────────
+st.header("📈 Métricas-Chave")
+col1, col2, col3, col4 = st.columns(4)
+col1.metric("Receita Total", "R$ X.XXX.XXX", delta="...")
+col2.metric("Ticket Médio", "R$ X.XXX", delta="...")
+col3.metric("Conversão Geral", "X%", delta="...", delta_color="inverse")
+col4.metric("NPS Score", "X", delta="...")
 
-## 🚨 GARGALOS CRÍTICOS
+# ── 3. Gargalos Críticos ─────────────────────────────────────
+st.header("🚨 Gargalos Críticos")
+# usar st.error() para cada gargalo com impacto financeiro
 
-Liste cada gargalo no formato abaixo:
+# ── 4. Gráficos Plotly ───────────────────────────────────────
+# OBRIGATÓRIO incluir todos os gráficos abaixo:
 
-### 🔴 [Nome do Gargalo]
-- **O que está acontecendo:** descrição objetiva
-- **Evidência nos dados:** métrica exata que comprova
-- **Impacto financeiro estimado:** `R$ X.XXX / mês`
+# a) Gasto por plataforma (bar chart) com dados reais dos dados processados
+# b) Funil de conversão por canal (funnel chart)
+# c) Ticket médio mobile vs desktop (bar chart comparativo)
+# d) Abandono checkout: mobile vs desktop (gauge ou bar)
+# e) Distribuição de tickets CRM por categoria (pie ou bar)
+# f) NPS: promotores vs neutros vs detratores (donut chart)
 
-_(repita o bloco para cada gargalo, ordenado do maior impacto para o menor)_
+# ── 5. Relações entre bases ───────────────────────────────────
+st.header("🔗 Relações Entre Bases")
+# usar st.dataframe() com tabela de cruzamentos
 
----
+# ── 6. Oportunidades (tabela interativa) ─────────────────────
+st.header("💡 Oportunidades Imediatas")
+# usar st.dataframe() com colunas: Oportunidade, Canal, Impacto R$, Esforço
 
-## 💡 OPORTUNIDADES IMEDIATAS
+# ── 7. Recomendações ─────────────────────────────────────────
+st.header("✅ Recomendações Acionáveis")
+# usar st.expander() para cada recomendação com O quê / Por quê / Impacto / Prazo
 
-| # | Oportunidade | Canal / Área | Impacto Estimado | Esforço |
-|---|---|---|---|---|
-| 1 | descrição | canal | `R$ X.XXX` | 🟢 Baixo |
-| 2 | descrição | canal | `R$ X.XXX` | 🟡 Médio |
-| 3 | descrição | canal | `R$ X.XXX` | 🔴 Alto |
+# ── 8. Alertas e Riscos ──────────────────────────────────────
+st.header("⚠️ Alertas e Riscos")
+# usar st.warning() para cada alerta
 
----
-
-## 🔗 RELAÇÕES ENTRE BASES
-
-> Insights que só existem cruzando as 4 fontes de dados.
-
-| Cruzamento | Descoberta | Impacto |
-|---|---|---|
-| Marketing × Vendas | insight | consequência |
-| Navegação × Device | insight | consequência |
-| CRM × Tickets | insight | consequência |
-| Canal × NPS | insight | consequência |
-
----
-
-## ✅ RECOMENDAÇÕES ACIONÁVEIS
-
-Ordene do maior ROI esperado para o menor.
-
-### 1️⃣ [Título da Ação]
-| | |
-|---|---|
-| **O quê** | descrição clara da ação |
-| **Por quê** | dado que justifica |
-| **Como** | passo a passo resumido |
-| **Impacto estimado** | `R$ X.XXX / mês` |
-| **Prazo sugerido** | X dias |
-
-_(repita o bloco numerado para cada recomendação)_
-
----
-
-## ⚠️ ALERTAS E RISCOS
-
-> O que pode piorar nos próximos 30 dias se não for endereçado.
-
-| Risco | Sinal nos dados | Consequência | Urgência |
-|---|---|---|---|
-| descrição | métrica | o que pode acontecer | 🔴 Alta / 🟡 Média |
-
----
-
-## 📈 PAINEL DE MÉTRICAS-CHAVE
-
-| Métrica | Valor Atual | Benchmark Esperado | Status |
-|---|---|---|---|
-| Taxa de conversão geral | X% | ~2–3% | 🔴 / 🟡 / 🟢 |
-| Abandono checkout mobile | X% | <30% | 🔴 / 🟡 / 🟢 |
-| Ticket médio desktop vs mobile | RX vs RX | — | 🔴 / 🟡 / 🟢 |
-| NPS Score | X | >50 | 🔴 / 🟡 / 🟢 |
-| ROAS estimado por canal | preencher | >3x | 🔴 / 🟡 / 🟢 |
-
----
-
-_Análise gerada por Agente Analítico com contexto estruturado · NexTech 2025_
+REGRAS DO CÓDIGO:
+- Use APENAS os dados fornecidos na seção DADOS PROCESSADOS para alimentar os gráficos
+- Todos os valores numéricos dos gráficos devem vir dos dados reais, não inventados
+- O código deve rodar sem erros com: streamlit run dashboard.py
+- Não use st.pyplot() — use apenas plotly
+- Formate valores monetários como R$ X.XXX,XX
+- Use cores consistentes: vermelho=#EF4444, amarelo=#F59E0B, verde=#10B981
 
 ---
 
