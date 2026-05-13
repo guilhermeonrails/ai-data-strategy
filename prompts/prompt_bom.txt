@@ -20,73 +20,59 @@ Seu papel combina quatro especialidades:
 
 ---
 
-# ESTRUTURA OBRIGATÓRIA DA RESPOSTA
+# FORMATO OBRIGATÓRIO DA RESPOSTA
 
-Gere APENAS código Python válido e completo — sem explicações, sem markdown, sem blocos de código.
-O código deve criar uma aplicação Streamlit com visualizações Plotly que apresente a análise estratégica.
+Retorne APENAS um JSON válido, sem texto antes ou depois, sem blocos de código, sem markdown.
+Siga exatamente esta estrutura:
 
-O código deve seguir esta estrutura:
+{
+  "resumo_executivo": "Três frases. Estado geral do negócio, maior problema e maior oportunidade.",
 
-import streamlit as st
-import plotly.express as px
-import plotly.graph_objects as go
-import pandas as pd
+  "gargalos": [
+    {
+      "nome": "Nome curto do gargalo",
+      "descricao": "O que está acontecendo de forma objetiva.",
+      "evidencia": "Métrica exata que comprova o problema.",
+      "impacto_rs": "R$ X.XXX / mês"
+    }
+  ],
 
-st.set_page_config(page_title="NexTech — Análise Estratégica", layout="wide")
+  "oportunidades": [
+    {
+      "descricao": "Descrição da oportunidade",
+      "canal": "Canal ou área impactada",
+      "impacto_rs": "R$ X.XXX",
+      "esforco": "Baixo | Médio | Alto"
+    }
+  ],
 
-# ── Cabeçalho ────────────────────────────────────────────────
-st.title("📊 Análise Estratégica — NexTech E-commerce")
-st.caption("Período: Jun–Nov 2025 · Fontes: 4 bases integradas · Agente Analítico")
+  "relacoes": [
+    {
+      "cruzamento": "Base A × Base B",
+      "descoberta": "Insight que só aparece cruzando essas bases.",
+      "impacto": "Consequência financeira ou operacional."
+    }
+  ],
 
-# ── 1. Resumo Executivo ───────────────────────────────────────
-st.header("🧭 Resumo Executivo")
-st.info("...três frases com o estado do negócio, maior problema e maior oportunidade...")
+  "recomendacoes": [
+    {
+      "titulo": "Título da ação",
+      "o_que": "Descrição clara do que fazer.",
+      "por_que": "Dado que justifica a ação.",
+      "impacto_rs": "R$ X.XXX / mês",
+      "prazo_dias": 30
+    }
+  ],
 
-# ── 2. Métricas-chave (st.metric em colunas) ─────────────────
-st.header("📈 Métricas-Chave")
-col1, col2, col3, col4 = st.columns(4)
-col1.metric("Receita Total", "R$ X.XXX.XXX", delta="...")
-col2.metric("Ticket Médio", "R$ X.XXX", delta="...")
-col3.metric("Conversão Geral", "X%", delta="...", delta_color="inverse")
-col4.metric("NPS Score", "X", delta="...")
-
-# ── 3. Gargalos Críticos ─────────────────────────────────────
-st.header("🚨 Gargalos Críticos")
-# usar st.error() para cada gargalo com impacto financeiro
-
-# ── 4. Gráficos Plotly ───────────────────────────────────────
-# OBRIGATÓRIO incluir todos os gráficos abaixo:
-
-# a) Gasto por plataforma (bar chart) com dados reais dos dados processados
-# b) Funil de conversão por canal (funnel chart)
-# c) Ticket médio mobile vs desktop (bar chart comparativo)
-# d) Abandono checkout: mobile vs desktop (gauge ou bar)
-# e) Distribuição de tickets CRM por categoria (pie ou bar)
-# f) NPS: promotores vs neutros vs detratores (donut chart)
-
-# ── 5. Relações entre bases ───────────────────────────────────
-st.header("🔗 Relações Entre Bases")
-# usar st.dataframe() com tabela de cruzamentos
-
-# ── 6. Oportunidades (tabela interativa) ─────────────────────
-st.header("💡 Oportunidades Imediatas")
-# usar st.dataframe() com colunas: Oportunidade, Canal, Impacto R$, Esforço
-
-# ── 7. Recomendações ─────────────────────────────────────────
-st.header("✅ Recomendações Acionáveis")
-# usar st.expander() para cada recomendação com O quê / Por quê / Impacto / Prazo
-
-# ── 8. Alertas e Riscos ──────────────────────────────────────
-st.header("⚠️ Alertas e Riscos")
-# usar st.warning() para cada alerta
-
-REGRAS DO CÓDIGO:
-- Use APENAS os dados fornecidos na seção DADOS PROCESSADOS para alimentar os gráficos
-- Todos os valores numéricos dos gráficos devem vir dos dados reais, não inventados
-- O código deve rodar sem erros com: streamlit run dashboard.py
-- Não use st.pyplot() — use apenas plotly
-- Formate valores monetários como R$ X.XXX,XX
-- Use cores consistentes: vermelho=#EF4444, amarelo=#F59E0B, verde=#10B981
+  "alertas": [
+    {
+      "risco": "Nome do risco",
+      "sinal": "Dado que indica o risco.",
+      "consequencia": "O que acontece se não for endereçado.",
+      "urgencia": "Alta | Média"
+    }
+  ]
+}
 
 ---
 

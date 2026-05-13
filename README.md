@@ -47,10 +47,10 @@ Abra o `.env` e substitua `sua_chave_aqui` pela sua chave do [Groq](https://cons
 python gerar_dados.py
 ```
 
-**6. Rode a análise estratégica**
+**6. Abra o dashboard**
 
 ```bash
-python analise.py
+streamlit run app.py
 ```
 
 As bases serão criadas na pasta `data/`:
@@ -69,7 +69,7 @@ As bases serão criadas na pasta `data/`:
 ```
 ai-data-strategy/
 ├── gerar_dados.py        # gerador de todas as bases fictícias
-├── analise.py            # agente analítico — lê dados e envia ao Groq
+├── app.py                # dashboard Streamlit — carrega dados, chama Groq e exibe relatório
 ├── requirements.txt      # dependências Python
 ├── .env                  # chave da API (não versionado)
 ├── .env.example          # modelo do .env
