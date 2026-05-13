@@ -6,7 +6,7 @@ Demonstração prática de como contexto, estrutura e engenharia de prompt trans
 
 ## Pré-requisitos
 
-- [Docker](https://www.docker.com/products/docker-desktop) instalado e rodando
+- Python 3.13+
 - Chave de API do [Groq](https://console.groq.com)
 
 ---
@@ -20,49 +20,39 @@ git clone https://github.com/guilhermeonrails/ai-data-strategy.git
 cd ai-data-strategy
 ```
 
-**2. Configure a chave da API**
-
-```bash
-export GROQ_API_KEY="sua_chave_aqui"
-```
-
-**3. Build e geração dos dados**
-
-```bash
-docker compose up --build
-```
-
-O container instala as dependências Python e gera automaticamente todas as bases de dados em um volume Docker:
-
-| Arquivo | Descrição | Volume |
-|---|---|---|
-| `marketing.csv` | 4.300 campanhas — Google Ads, Instagram, TikTok | `dados` |
-| `vendas.xlsx` | 3.000 pedidos com device, canal e receita | `dados` |
-| `navegacao.json` | 10.000 eventos de sessão (funil completo) | `dados` |
-| `crm.sqlite` | 2.000 clientes, tickets de suporte e NPS | `dados` |
-
----
-
-## Rodando localmente (sem Docker)
-
-**1. Crie o ambiente virtual**
+**2. Crie e ative o ambiente virtual**
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 ```
 
-**2. Instale as dependências**
+**3. Instale as dependências**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-**3. Gere as bases de dados**
+**4. Configure a chave da API**
+
+```bash
+export GROQ_API_KEY="sua_chave_aqui"
+```
+
+**5. Gere as bases de dados**
 
 ```bash
 python gerar_dados.py
 ```
+
+As bases serão criadas na pasta `data/`:
+
+| Arquivo | Descrição |
+|---|---|
+| `marketing.csv` | 4.300 campanhas — Google Ads, Instagram, TikTok |
+| `vendas.xlsx` | 3.000 pedidos com device, canal e receita |
+| `navegacao.json` | 10.000 eventos de sessão (funil completo) |
+| `crm.sqlite` | 2.000 clientes, tickets de suporte e NPS |
 
 ---
 
@@ -72,12 +62,10 @@ python gerar_dados.py
 ai-data-strategy/
 ├── gerar_dados.py        # gerador de todas as bases fictícias
 ├── requirements.txt      # dependências Python
-├── Dockerfile
-├── docker-compose.yml
 ├── prompts/
 │   ├── prompt_ruim.txt   # prompt genérico (sem contexto)
 │   └── prompt_bom.txt    # prompt estruturado (agente analítico)
-└── data/                 # gerado automaticamente — não versionado
+└── data/
     ├── marketing.csv
     ├── vendas.xlsx
     ├── navegacao.json
