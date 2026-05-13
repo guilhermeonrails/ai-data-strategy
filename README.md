@@ -36,8 +36,10 @@ pip install -r requirements.txt
 **4. Configure a chave da API**
 
 ```bash
-export GROQ_API_KEY="sua_chave_aqui"
+cp .env.example .env
 ```
+
+Abra o `.env` e substitua `sua_chave_aqui` pela sua chave do [Groq](https://console.groq.com).
 
 **5. Gere as bases de dados**
 

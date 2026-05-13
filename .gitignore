@@ -10,6 +10,7 @@ __pycache__/
 # variáveis de ambiente
 .env
 .env.*
+!.env.example
 
 # Docker volumes
 volumes/
