@@ -118,13 +118,6 @@ Fontes integradas:
   - navegacao.json   → eventos de sessão (funil: home → view → cart → checkout → compra)
   - crm.sqlite       → clientes (LTV, tickets de suporte, NPS)
 
-Problemas conhecidos do negócio:
-  - Alto abandono de carrinho (especialmente mobile)
-  - Campanhas com ROAS suspeito
-  - Baixa conversão em alguns canais
-  - Clientes recorrentes com alto volume de tickets
-  - CAC elevado em canais com baixa qualidade de tráfego
-
 ---
 
 # DADOS PROCESSADOS
