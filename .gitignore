@@ -1,8 +1,6 @@
 # ambiente virtual
 .venv/
 
-# dados gerados
-data/
 
 # Python
 __pycache__/
